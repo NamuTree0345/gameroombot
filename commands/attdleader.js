@@ -30,7 +30,7 @@ module.exports.command = new Command('리더보드', async (msg, ctx) => {
     let number = 1
     for(let i = 0; i < sortedDate.length; i++) {
         const res = await msg.client.users.fetch(sortedDate[i].id)
-        text += number + '위: ' + res.username + ' - ' + `${sortedDate[i].date.getMonth() + 1}월 ${sortedDate[i].date.getDate()}일 ${sortedDate[i].date.getHours() + 1}시 ${sortedDate[i].date.getMinutes()}분 ${sortedDate[i].date.getSeconds()}초` + '\n'
+        text += number + '위: ' + res.username + ' - ' + `${sortedDate[i].date.getMonth() + 1}월 ${sortedDate[i].date.getDate()}일 ${sortedDate[i].date.getHours()}시 ${sortedDate[i].date.getMinutes()}분 ${sortedDate[i].date.getSeconds()}초` + '\n'
         number++
     }
     text += '```'
