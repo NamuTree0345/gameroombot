@@ -67,6 +67,7 @@ client.on('message', async (msg) => {
           );
         }
     
+        const waitMsg = await msg.channel.send('<a:loading:865033893954846721> 검색중입니다..')
         let songInfo
         let song
         if(args[1].startsWith('http')) {
@@ -113,6 +114,7 @@ client.on('message', async (msg) => {
                 var connection = await voiceChannel.join();
                 queueContruct.connection = connection;
                 // Calling the play function to start a song
+                waitMsg.delete()
                 playMusic(msg.guild, queueContruct.songs[0]);
             } catch (err) {
                 // Printing the error message if the bot fails to join the voicechat
@@ -123,6 +125,7 @@ client.on('message', async (msg) => {
         } else {
             serverQueue.songs.push(song);
             console.log(serverQueue.songs);
+            waitMsg.delete()
             return msg.channel.send(`\`${song.title}\`이 대기열에 추가되었습니다!`);
         }
 
