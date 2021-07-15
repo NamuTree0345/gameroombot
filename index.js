@@ -31,7 +31,7 @@ function playMusic(guild, song) {
     }
 
     const dispatcher = serverQueue.connection
-        .play(ytdl(song.url))
+        .play(ytdl(song.url, {filter: 'audioonly'}))
         .on("finish", () => {
             serverQueue.songs.shift();
             playMusic(guild, serverQueue.songs[0]);
