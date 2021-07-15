@@ -17,6 +17,7 @@ module.exports.WarnActionArgument = class WarnActionArgument extends CommandArgu
 
 module.exports.command = new Command('경고', async (msg, ctx) => {
 
+    if(require('../config.json').debugging) {
     if(!msg.member.hasPermission('ADMINISTRATOR')) {
         msg.channel.send(':x: 관리자 권한이 필요합니다.')
         return
@@ -55,5 +56,6 @@ module.exports.command = new Command('경고', async (msg, ctx) => {
             }
             break
     }
+}
 
 }, [new this.WarnActionArgument('동작<추가, 제거>')])
