@@ -10,7 +10,7 @@ module.exports.command = new Command('deploy', async (msg, ctx) => {
 
     await msg.channel.send('<a:loading:865033893954846721> Pulling from git...')
     exec('git pull', async (err, stdout, stderr) => {
-        let txt = 'Pulled Successfully!\n```diff\n[DEPLOY] Start'
+        let txt = 'Pulled Successfully!\n```diff\n[DEPLOY] Start\n'
         txt += stdout
         txt += '\n```'
         await msg.channel.send(txt)
