@@ -9,11 +9,13 @@ module.exports.command = new Command('deploy', async (msg, ctx) => {
     }
 
     await msg.channel.send('<a:loading:865033893954846721> Pulling from git...')
-    let txt = 'Stdout\n```diff'
+    let txt = 'Pulled Successfully!\n```diff'
     exec('git pull', (err, stdout, stderr) => {
         txt += stdout
     })
     txt += '```'
     await msg.channel.send(txt)
+    await msg.channel.send('Restarting...')
+    exec('pm2 restart gameroom')
 
 })
