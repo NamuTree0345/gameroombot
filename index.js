@@ -162,5 +162,5 @@ client.on('message', async (msg) => {
 
 })
 
-if(config.debugging) console.log('[ Info ] Debug version')
+if(config.debugging) console.log('[ Info ] Debug version!!')
 client.login(config.debugging ? config.devToken : config.token)
