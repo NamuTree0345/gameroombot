@@ -35,7 +35,7 @@ module.exports.command = new Command('룸카페', (msg, ctx) => {
                     msg.author.send(':white_check_mark: 룸카페 생성 완료!')
                 })
             } else {
-                msg.author.send(':x: 명령어가 잘못되었습니다. 멘션 추가 부탁!')
+                msg.author.send(':x: 명령어가 잘못되었습니다. 멘션 추가 부탁!!')
             }
             break
         case '유저추가':
