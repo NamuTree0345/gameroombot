@@ -4,14 +4,16 @@ const fs = require('fs').promises
  * @param {String} id 
  */
 module.exports.initConfig = async (id) => {
-    await fs.writeFile('../data/user-' + msg.mentions.users.first().id + '.json', JSON.stringify({
-        id: msg.mentions.users.first().id,
+    await fs.writeFile('./data/user-' + id + '.json', JSON.stringify({
+        id: id,
         pets: [],
-        warns: 0
+        warns: 0,
+        lastAttd: ''
     }))
     return {
-        id: msg.mentions.users.first().id,
+        id: id,
         pets: [],
-        warns: 0
+        warns: 0,
+        lastAttd: ''
     }
 }
