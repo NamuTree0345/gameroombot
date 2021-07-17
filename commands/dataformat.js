@@ -16,7 +16,7 @@ module.exports.command = new Command('dataformat', async (msg, ctx) => {
         const data = JSON.parse(value)
         if(data.point === undefined) {
             data.point = 0
-            await msg.channel.send('Applied point to user data!')
+            await msg.channel.send('Applied point to user data ' + data.id + '!')
         }
     }
 
