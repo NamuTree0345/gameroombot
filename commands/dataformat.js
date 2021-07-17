@@ -12,7 +12,7 @@ module.exports.command = new Command('dataformat', async (msg, ctx) => {
     const read = await fs.readdir('./data/')
     for(let i = 0; i < read.length; i++) {
         const elem = read[i]
-        const value = await fs.readFile('./data/user-' + msg.author.id + '.json', 'utf-8')
+        const value = await fs.readFile('./data/user-' + elem.id + '.json', 'utf-8')
         const data = JSON.parse(value)
         if(data.point === undefined) {
             data.point = 0
