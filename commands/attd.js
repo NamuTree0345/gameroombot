@@ -22,6 +22,7 @@ module.exports.command = new Command('출첵', async (msg, ctx) => {
             msg.channel.send(`:x: 이미 출첵을 완료했습니다!`)
         } else {
             newData.lastAttd = now
+            newData.point += 1
             msg.channel.send(`:star2: ${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 출첵을 완료하였습니다!`)
         }
     }
